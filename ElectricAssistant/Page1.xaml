@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ElectricAssistant.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle
+            VerticalAlignment="Top" HorizontalAlignment="Stretch"
+            Height="80" Fill="#FFDCBA01"/>
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <TextBlock Grid.Row="0" Text="About" Style="{StaticResource PhoneTextNormalStyle}" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,27" Width="444" FontSize="22"/>
+
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,10,12,0">
+            <TextBlock HorizontalAlignment="Left" Margin="10,147,0,0" TextWrapping="Wrap" 
+                       Text="ElectricAssistant application for Windows Phone 8 developed by JP Dias. 
+                       &#x0a;
+                       &#x0a;Version: 1.1.0.0 
+                       
+                       &#x0a;
+                       &#x0a; &#x0a;
+                       &#x0a;Thank you for using!
+                         &#x0a;Feel free to review in store!
+                       "
+                       VerticalAlignment="Top" Height="282" Width="446" FontSize="22"/>
+
+            <Image HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Source="icon2.png"/>
+
+            <Button Click="Button_Click" Margin="0,453,0,123" BorderThickness="0">
+                <TextBlock TextDecorations="Underline" Text="More apps by JP Dias" Height="41" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

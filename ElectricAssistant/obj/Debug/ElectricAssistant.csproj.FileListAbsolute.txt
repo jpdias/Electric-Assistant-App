@@ -71,3 +71,5 @@ C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistan
 C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistant\ElectricAssistant\obj\Debug\ElectricAssistant.csprojResolveAssemblyReference.cache
 C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistant\ElectricAssistant\Bin\Debug\icon1.png
 C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistant\ElectricAssistant\Bin\Debug\icon2.png
+C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistant\ElectricAssistant\obj\Debug\Page1.g.cs
+C:\Users\João Pedro Dias\Documents\Visual Studio 2013\Projects\ElectricAssistant\ElectricAssistant\Bin\Debug\about.png

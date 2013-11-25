@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -14,6 +15,7 @@ namespace ElectricAssistant
 
         public MainPage()
         {
+            Thread.Sleep(650);
             InitializeComponent();
 
             // Set the data context of the listbox control to the sample data
@@ -23,6 +25,7 @@ namespace ElectricAssistant
             //BuildLocalizedApplicationBar();
             if (Lista4 != null) Lista4.Visibility = Visibility.Collapsed;
             if (caixa != null) caixa.Visibility = Visibility.Collapsed;
+
         }
 
         // Load data for the ViewModel Items
@@ -33,7 +36,10 @@ namespace ElectricAssistant
                 App.ViewModel.LoadData();
             }
         }
-
+        private void About1(object sender, EventArgs eventArgs)
+        {
+            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+        }
 
         private void Lista1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -344,7 +350,11 @@ namespace ElectricAssistant
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            double volt, curr, watt, resist;
+            double volt;
+            double curr;
+            double watt;
+            double resist;
+
             if ((V.Text.Trim().Length != 0 && I.Text.Trim().Length != 0 && P.Text.Trim().Length == 0 &&
                  R.Text.Trim().Length == 0)
                 && (double.TryParse(V.Text, out volt) && double.TryParse(I.Text, out curr)))
@@ -352,19 +362,20 @@ namespace ElectricAssistant
                 R.Text = Math.Round((volt/curr), 14).ToString();
                 P.Text = Math.Round((volt*curr), 14).ToString();
             }
-            else if ((V.Text.Trim().Length == 0 && I.Text.Trim().Length != 0 && P.Text.Trim().Length != 0 &&
-                      R.Text.Trim().Length == 0)
-                     && (double.TryParse(P.Text, out watt) && double.TryParse(V.Text, out curr)))
-            {
-                R.Text = Math.Round((watt/(curr*curr)), 14).ToString();
-                V.Text = Math.Round((watt/curr), 14).ToString();
-            }
+            
             else if ((V.Text.Trim().Length != 0 && I.Text.Trim().Length == 0 && P.Text.Trim().Length != 0 &&
                       R.Text.Trim().Length == 0)
                      && (double.TryParse(V.Text, out volt) && double.TryParse(P.Text, out watt)))
             {
                 R.Text = Math.Round(((volt*volt)/watt), 14).ToString();
                 I.Text = Math.Round((volt/double.Parse(R.Text)), 14).ToString();
+            }
+            else if (V.Text.Trim().Length == 0 && I.Text.Trim().Length != 0 && P.Text.Trim().Length != 0 &&
+                  R.Text.Trim().Length == 0
+                 && double.TryParse(P.Text, out watt) && double.TryParse(I.Text, out curr))
+            {
+                R.Text = Math.Round((watt / (curr * curr)), 14).ToString();
+                V.Text = Math.Round((watt / curr), 14).ToString();
             }
             else if ((V.Text.Trim().Length != 0 && I.Text.Trim().Length == 0 && P.Text.Trim().Length == 0 &&
                       R.Text.Trim().Length != 0)
@@ -379,6 +390,13 @@ namespace ElectricAssistant
             {
                 V.Text = Math.Round((Math.Sqrt(watt*resist)), 14).ToString();
                 I.Text = Math.Round((watt/double.Parse(V.Text)), 14).ToString();
+            }
+            else if ((V.Text.Trim().Length == 0 && I.Text.Trim().Length != 0 && R.Text.Trim().Length != 0 &&
+                    P.Text.Trim().Length == 0)
+                    && (double.TryParse(I.Text, out curr) && double.TryParse(R.Text, out resist)))
+            {
+                V.Text = Math.Round((curr*resist), 14).ToString();
+                P.Text = Math.Round((curr* double.Parse(V.Text)), 14).ToString();
             }
             else
                 MessageBox.Show("No sufficient or correct data!", "", MessageBoxButton.OK);

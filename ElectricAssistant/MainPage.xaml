@@ -86,7 +86,7 @@
         <Rectangle 
     VerticalAlignment="Top" HorizontalAlignment="Stretch" 
     Height="150" Fill="#FFDCBA01" />
-     
+
         <phone:Pivot Title="Electric Assistant" Margin="-2,2,2,-2" >
 
             <!--Pivot item one-->
@@ -238,20 +238,28 @@
             <!--Pivot item two-->
             <phone:PivotItem Header="Ohm's Law">
                 <Grid HorizontalAlignment="Left" Height="603" VerticalAlignment="Top" Width="456">
-                    <TextBox x:Name="R" HorizontalAlignment="Left" Height="72" Margin="158,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
-                    <TextBox x:Name="V" HorizontalAlignment="Left" Height="72" Margin="158,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
-                    <TextBox x:Name="I" HorizontalAlignment="Left" Height="72" Margin="158,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
-                    <TextBox x:Name="P" HorizontalAlignment="Left" Height="72" Margin="158,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
-                    <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,429,0,84" Width="446" Click="Button_Click"/>
-                    <Button Content="Clear" HorizontalAlignment="Left" Margin="10,519,0,0" VerticalAlignment="Top" Width="446" Click="Button_Click_1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="418,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="36" FontSize="25" Text="Ω"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="0,362,0,0" TextWrapping="Wrap" Text="Power(P):" VerticalAlignment="Top" Width="106" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.371,-2.83"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="0,275,0,0" TextWrapping="Wrap" Text="Resistence(R): " VerticalAlignment="Top" Width="153" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.457,0.426"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="0,172,0,0" TextWrapping="Wrap" Text="Current(I): " VerticalAlignment="Top" Width="124" Height="47" TextAlignment="Center" FontSize="25"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="0,74,0,0" TextWrapping="Wrap" Text="Voltage(V): " VerticalAlignment="Top" Width="124" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.5,0.532"/>
-                    <TextBlock Margin="418,362,-4,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" FontSize="25" Text="W" RenderTransformOrigin="0.444,0.434"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="420,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="32" FontSize="25" Text="V"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="420,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="28" FontSize="25" Text="A"></TextBlock>
+                    <TextBox x:Name="V" HorizontalAlignment="Left" Height="72" Margin="158,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
+                    <TextBox x:Name="I" HorizontalAlignment="Left" Height="72" Margin="158,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
+                    <TextBox x:Name="R" HorizontalAlignment="Left" Height="72" Margin="158,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
+                    <TextBox x:Name="P" HorizontalAlignment="Left" Height="72" Margin="158,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" InputScope="Number"/>
+                    <Button Content="Calculate" HorizontalAlignment="Left" Margin="10,412,0,97" Width="446" Click="Button_Click">
+                        <Button.Background>
+                            <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="10,497,0,0" VerticalAlignment="Top" Width="446" Click="Button_Click_1">
+                        <Button.Background>
+                            <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                        </Button.Background>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Left" Margin="418,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="36" FontSize="25" Text="Ω"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,336,0,0" TextWrapping="Wrap" Text="Power(P):" VerticalAlignment="Top" Width="106" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.371,-2.83"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,243,0,0" TextWrapping="Wrap" Text="Resistence(R): " VerticalAlignment="Top" Width="153" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.457,0.426"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="-2,152,0,0" TextWrapping="Wrap" Text="Current(I): " VerticalAlignment="Top" Width="124" Height="47" TextAlignment="Center" FontSize="25"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Voltage(V): " VerticalAlignment="Top" Width="124" Height="47" TextAlignment="Center" FontSize="25" RenderTransformOrigin="0.5,0.532"/>
+                    <TextBlock Margin="418,338,-4,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" FontSize="25" Text="W" RenderTransformOrigin="0.444,0.434"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="420,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="32" FontSize="25" Text="V"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="420,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="28" FontSize="25" Text="A"></TextBlock>
 
                 </Grid>
             </phone:PivotItem>
@@ -275,11 +283,23 @@
                         </Slider.Background>
 
                     </Slider>
-                    <TextBlock x:Name="Texto" HorizontalAlignment="Left" Height="496" Margin="0,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="30" TextAlignment="Center"/>
+                    <TextBlock x:Name="Texto" HorizontalAlignment="Left" Height="496" Margin="10,104,-10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="30" TextAlignment="Center"/>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Slide to select LED color." VerticalAlignment="Bottom" Width="458" Height="40" FontSize="20" TextAlignment="Center" Margin="-1,0,-1,499">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="#FFDCBA01"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </Grid>
+
             </phone:PivotItem>
+
         </phone:Pivot>
 
     </Grid>
-
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Minimized" Opacity="0.999" IsMenuEnabled="False" IsVisible="True">
+            <shell:ApplicationBarIconButton IconUri="about.png" Text="about" Click="About1"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
+    
